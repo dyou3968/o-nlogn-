@@ -28,7 +28,8 @@ while on:
     with sr.Microphone() as source:
         # use the default microphone as the audio source
         # listen for the first phrase and extract it into audio data
-        audio = r.listen(source)
+        r.adjust_for_ambient_noise(source, duration=1)
+        audio = r.record(source,duration=5)
         print("Running")
     try:
         audioInput = r.recognize_google(audio)
