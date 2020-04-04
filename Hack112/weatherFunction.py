@@ -79,10 +79,10 @@ class WeatherAnswers(object):
         windInsert = self.getWind(report['wind'])
         if abs(feelsLike - temperature) < 5:
             weatherString = (f"Right now, the weather in {city} consists of {weather['description']}." + 
-                             f' The temperature outside is {temperature} degrees.{windinsert}')
+                             f' The temperature outside is {temperature} degrees.{windInsert}')
         else:
             weatherString = (f"Right now, the weather in {city} consists of {weather['description']}." + 
-                             f' The temperature outside is {temperature} degrees, but it feels like {feelsLike}.{windinsert}')
+                             f' The temperature outside is {temperature} degrees, but it feels like {feelsLike}.{windInsert}')
         return weatherString
 
 
