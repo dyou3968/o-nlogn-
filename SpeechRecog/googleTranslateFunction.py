@@ -7,6 +7,7 @@ class Translate(object):
     def DAVIDtranslator(self, text):
         # Takes in a same string and returns the message
         # In the language of the users choice
+        text = text.lower()
         words = text.split(" ")
         start = words.index("translate")
         indexWords = ["in", "to", "into"]
