@@ -51,15 +51,38 @@ class WeatherAnswers(object):
 
     def kelvinToFarenheit(self, kelvin):
         return 32+9/5*(kelvin-273)
+    
+    def inRange(self, number, two):
+        if (number >= two[0]) and (number <= two[1]): return True
+        else: return False
+
+    def getWind(self, windData):
+        speed = windData['speed']
+        angle = windData['deg']
+        direction = ["north", "east", "south", "west"][self.roundHalfUp(angle/90)%4]
+        windNames = [[[8, 12],"gentle breeze"], [[13, 18],"moderate breeze"], [[19, 24],"fresh breeze"],
+                     [[25, 31],"strong breeze"], [[32, 46],"gale"], [[47,63],"storm"], [[64,80],"violent storm"]]
+        if speed < 8: return ""
+        else:
+            for i in windNames:
+                if inRange(speed, i[0]):
+                    return f" It's windy today, with a {i[1]} facing {direction}"
+            return " Don't venture outside. Find a safe place and hunker down."
 
     def DAVIDweather(self,text):
         report = self.weatherToString(text)
         weather = report["weather"][0]
         main = report["main"]
-        temperature = self.roundHalfUp(self.kelvinToFarenheit((main['feels_like'])))
+        temperature = self.roundHalfUp(self.kelvinToFarenheit((main['temp'])))
+        feelsLike = self.roundHalfUp(self.kelvinToFarenheit((main['feels_like'])))
         city = report['name']
-        weatherString = (f"Right now, the weather in {city} consists of {weather['description']}." + 
-                        f' It feels like {temperature} degrees Fahrenheit.')
+        windInsert = self.getWind(report['wind'])
+        if abs(feelsLike - temperature) < 5:
+            weatherString = (f"Right now, the weather in {city} consists of {weather['description']}." + 
+                             f' The temperature outside is {temperature} degrees.{windinsert}')
+        else:
+            weatherString = (f"Right now, the weather in {city} consists of {weather['description']}." + 
+                             f' The temperature outside is {temperature} degrees, but it feels like {feelsLike}.{windinsert}')
         return weatherString
 
 
