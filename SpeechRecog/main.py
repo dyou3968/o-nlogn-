@@ -44,6 +44,7 @@ while on:
         audioInput = r.recognize_google(audio)
         #File.write(audioInput)    
         #File.close()
+        print(audioInput)
         result = process(audioInput)
         print(result)
         audioOutput(result)
