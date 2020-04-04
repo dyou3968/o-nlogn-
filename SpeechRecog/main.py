@@ -32,6 +32,7 @@ def audioOutput(text):
     engine.runAndWait()
     return
 
+
 r = sr.Recognizer()
 File = open("speechfile.txt","w+")
 on = True
