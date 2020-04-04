@@ -41,6 +41,4 @@ def testDAVIDtranslator():
     sample6 = "D.A.V.I.D., translate 我不知道 into English"
     assert(DAVIDtranslator(sample6) == "I do not know")
     print('Passed')
-
-print(DAVIDtranslator("translate Das ist gut"))
 #testDAVIDtranslator()
