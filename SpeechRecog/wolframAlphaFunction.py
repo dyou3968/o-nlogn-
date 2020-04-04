@@ -19,5 +19,3 @@ def testDAVIDwolframalpha():
     sample4 = "How old is Donald Trump?"
     assert(DAVIDwolframalpha(sample4) == "73 years 9 months 20 days")
     print('Passed!')
-
-print(DAVIDwolframalpha("what is the capital of France"))
