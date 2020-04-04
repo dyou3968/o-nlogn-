@@ -32,12 +32,6 @@ def audioOutput(text):
     engine.runAndWait()
     return
 
-<<<<<<< HEAD
-=======
-text = "What is the weather like in Pittsburgh"
-audioOutput(text)
-
->>>>>>> b30a9bef35223e58038dad7975b56270bb5c3130
 r = sr.Recognizer()
 File = open("speechfile.txt","w+")
 on = True
@@ -61,7 +55,3 @@ while on:
     except sr.UnknownValueError:                            
     #    # speech is unintelligible
         print("Could not understand audio")
-<<<<<<< HEAD
-
-=======
->>>>>>> b30a9bef35223e58038dad7975b56270bb5c3130
