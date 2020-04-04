@@ -4,7 +4,6 @@ import googletrans
 from googletrans import Translator
 
 def DAVIDtranslator(text):
-    text = text.lower()
     # Takes in a same string and returns the message
     # In the language of the users choice
     words = text.split(" ")
@@ -39,4 +38,5 @@ def testDAVIDtranslator():
     assert(DAVIDtranslator(sample6) == "I do not know")
     print('Passed')
 
-testDAVIDtranslator()
+print(DAVIDtranslator("translate Das ist gut"))
+#testDAVIDtranslator()
