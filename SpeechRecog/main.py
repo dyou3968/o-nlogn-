@@ -3,21 +3,23 @@ import speech_recognition as sr
 from wolframAlphaFunction import *
 from weatherFunction import *
 from googleTranslateFunction import *
+from wikipediaFunction import *
 #import weatherFunction as wf
 
 def process(text):
     text = text.lower()
-    words = text.split(" ")
-    if ("homework" in words) or ("code" in words) or ("112" in words):
+    if ("homework" in text) or ("code" in text) or ("112" in text):
         return (f"Sorry, I cannot do that. That would be an academic integrity violation." + 
                 f"Please ask the TAs for help. If you go any further down this path"
                 f"I will have to get the real David Kosbie")
-    if ("language" in words) or ("translate" in words):
+    elif ("language" in text) or ("translate" in text):
         translate = Translate()
         return translate.DAVIDtranslator(text)
-    if ("weather" in words) or ("temperature" in words) or ("wind speed" in words) or ("humidity" in words):
+    elif ("weather" in text) or ("temperature" in text) or ("wind speed" in text) or ("humidity" in text):
         wf = WeatherAnswers()
         return wf.DAVIDweather(text)
+    elif ("tell me about" in text) or ("talk about" in text):
+        return getDAVIFacts(text)
     else:
         return DAVIDwolframalpha(text)
 
