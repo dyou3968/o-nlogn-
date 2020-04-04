@@ -1,11 +1,9 @@
-
+import pyttsx3
 import speech_recognition as sr
 from wolframAlphaFunction import *
 from weatherFunction import *
 from googleTranslateFunction import *
 #import weatherFunction as wf
-
-
 
 def process(text):
     text = text.lower()
@@ -37,9 +35,18 @@ while on:
         audioInput = r.recognize_google(audio)
         #File.write(audioInput)    
         #File.close()
-        print(process(audioInput))
+        result = process(audioInput)
+        print(result)
+        audioOutput(result)
         break
         # recognize speech using Google Speech Recognition
     except sr.UnknownValueError:                            
     #    # speech is unintelligible
         print("Could not understand audio")
+
+
+def audioOutput(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+    return
