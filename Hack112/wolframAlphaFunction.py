@@ -1,3 +1,5 @@
+#pip install wolframalpha
+
 import wolframalpha
 
 #From https://www.geeksforgeeks.org/python-create-a-simple-assistant-using-wolfram-alpha-api/

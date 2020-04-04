@@ -1,3 +1,5 @@
+#pip install googletrans
+
 import googletrans
 from googletrans import Translator
 
