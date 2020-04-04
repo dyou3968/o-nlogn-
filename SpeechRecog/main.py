@@ -21,6 +21,12 @@ def process(text):
     else:
         return DAVIDwolframalpha(text)
 
+def audioOutput(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+    return
+
 r = sr.Recognizer()
 File = open("speechfile.txt","w+")
 on = True
@@ -45,9 +51,3 @@ while on:
     #    # speech is unintelligible
         print("Could not understand audio")
 
-
-def audioOutput(text):
-    engine = pyttsx3.init()
-    engine.say(text)
-    engine.runAndWait()
-    return
