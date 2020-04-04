@@ -24,7 +24,7 @@ def process(text):
     elif ("tell me about" in text) or ("talk about" in text):
         return getDAVIFacts(text)
     else:
-        return DAVIDwolframalpha(text))
+        return DAVIDwolframalpha(text)
 
 def audioOutput(text):
     engine = pyttsx3.init()
