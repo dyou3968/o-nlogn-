@@ -4,6 +4,7 @@ import googletrans
 from googletrans import Translator
 
 def DAVIDtranslator(text):
+    text = text.lower()
     # Takes in a same string and returns the message
     # In the language of the users choice
     words = text.split(" ")
