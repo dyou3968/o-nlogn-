@@ -12,8 +12,8 @@ def process(text):
     if ("my to do list" in text):
         return DAVIDtoDoList(text)
     elif ("homework" in text) or ("code" in text) or ("112" in text):
-        return (f"Sorry, I cannot do that. That would be an academic integrity violation." + 
-                f"Please ask the TAs for help. If you go any further down this path"
+        return (f"Sorry, I cannot do that. That would be an academic integrity violation. " + 
+                f"Please ask the TAs for help. If you go any further down this path "
                 f"I will have to get the real David Kosbie")
     elif ("language" in text) or ("translate" in text):
         translate = Translate()
@@ -22,7 +22,7 @@ def process(text):
         wf = WeatherAnswers()
         return wf.DAVIDweather(text)
     elif ("tell me about" in text) or ("talk about" in text):
-        return getDAVIFacts(text)
+        return getDAVIDFacts(text)
     else:
         return DAVIDwolframalpha(text)
 
@@ -31,6 +31,8 @@ def audioOutput(text):
     engine.say(text)
     engine.runAndWait()
     return
+
+
 
 r = sr.Recognizer()
 File = open("speechfile.txt","w+")
@@ -55,3 +57,6 @@ while on:
     except sr.UnknownValueError:                            
     #    # speech is unintelligible
         print("Could not understand audio")
+
+
+
