@@ -59,5 +59,3 @@ def DAVIDweather(text):
                     f' It feels like {temperature} degrees Fahrenheit.')
     return weatherString
 
-text = "D.A.V.I.D., What's the weather like in Pittsburgh"
-print(DAVIDweather(text))

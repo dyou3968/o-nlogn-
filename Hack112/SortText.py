@@ -3,8 +3,6 @@ from weatherFunction import *
 from googleTranslateFunction import *
 
 
-text = input("Input:")
-
 def process(text):
     words = text.split(" ")
     keyWeatherWords = []
@@ -15,3 +13,10 @@ def process(text):
         return DAVIDweather(text)
     else:
         return DAVIDwolframalpha(text)
+
+text = input("Input: ").lower()
+while text != "break":
+    print(process(text))
+    text = input("Input: ").lower()
+
+        
