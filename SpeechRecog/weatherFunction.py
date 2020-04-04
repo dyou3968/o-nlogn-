@@ -82,10 +82,10 @@ class WeatherAnswers(object):
         windInsert = self.getWind(report, False)
         if abs(feelsLike - temperature) < 5:
             weatherString = (f"Right now, the weather in {city} consists of {weather['description']}." + 
-                             f' The temperature outside is {temperature} degrees. {windTnsert}')
+                             f' The temperature outside is {temperature} degrees. {windInsert}')
         else:
             weatherString = (f"Right now, the weather in {city} consists of {weather['description']}." + 
-                             f' The temperature outside is {temperature} degrees, but it feels like {feelsLike}. {windTnsert}')
+                             f' The temperature outside is {temperature} degrees, but it feels like {feelsLike}. {windInsert}')
         return weatherString
 
     def getHumidity(self, report):
