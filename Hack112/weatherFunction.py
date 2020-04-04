@@ -12,6 +12,8 @@ NOTE:
 # sentences 
 """
 
+#pip install openweathermap.org
+
 # Round Half Up Import
 import decimal
 
