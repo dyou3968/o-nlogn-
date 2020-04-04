@@ -62,7 +62,12 @@ def removeTask(path, task):
 
 def readTask(path):
     entries = getTodoListData(path)
-    return ". ".join(entries)
+    if len(entries) = 0:
+        return "There is nothing on your to do list"
+    else:
+        message = "Today on your to do list"
+        entries = ". ".join(entries)
+        return message + entries
 
 def DAVIDtoDoList(text):
     path = "todoList.txt"
