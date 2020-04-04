@@ -1,6 +1,3 @@
-#import speech_recognition as sr
-#recognize_sphinx() -->CMU speech recog, can be used offline
-                                               # NOTE: this requires PyAudio because it uses the Microphone class
 import speech_recognition as sr
 #sr.__version__
 r = sr.Recognizer()
@@ -22,3 +19,4 @@ while on:
     except sr.UnknownValueError:                            
     #    # speech is unintelligible
         print("Could not understand audio")
+        
